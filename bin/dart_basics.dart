@@ -3,11 +3,12 @@ import 'dart:math';
 
 void main() {
   var nc = NumberConvert();
-  print(nc.intToBinary(95));
-  print(nc.binaryToInt('1011111'));
-  print(nc.multipliers(9875000));
-  print(nc.nodInt(126, 12));
-  print(nc.nokInt(24, 35));
+  // print(nc.intToBinary(95));
+  // print(nc.binaryToInt('1011111'));
+  // print(nc.multipliers(9875000));
+  // print(nc.nodInt(126, 12));
+  // print(nc.nokInt(24, 35));
+  print(nc.getListNum('Проверка 555 строки или 6.25'));
 }
 
 class NumberConvert {
@@ -93,4 +94,23 @@ class NumberConvert {
     }
     return binNum;
   }
+
+//Реализуйте метод, который принимает строку слов, разделённых пробелами. 
+//Задача — найти в данной строке числа и вернуть коллекцию num этих чисел.
+
+List getListNum(String str){
+List<num> listNumbers=[];
+List listWords = str.split(' ');
+listWords.forEach((elem) {
+  var numDec = double.tryParse(elem);
+  if (numDec != null) {
+    listNumbers.add(numDec);
+  }
+});
+return listNumbers;
 }
+
+
+
+}
+
