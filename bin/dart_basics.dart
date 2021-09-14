@@ -8,7 +8,8 @@ void main() {
   // print(nc.multipliers(9875000));
   // print(nc.nodInt(126, 12));
   // print(nc.nokInt(24, 35));
-  print(nc.getListNum('Проверка 555 строки или 6.25'));
+  // print(nc.getListNum('Проверка 555 строки или 6.25'));
+  print(nc.wordCount('Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный жара'));
 }
 
 class NumberConvert {
@@ -110,7 +111,21 @@ listWords.forEach((elem) {
 return listNumbers;
 }
 
+//Есть коллекция слов. Реализуйте метод, возвращающий Map. 
+//Данный Map должен соотносить слово и количество его вхождений в данную коллекцию.
 
+  Map wordCount(String str){
+  List listWords = str.split(' ');
+  Map wordCount = Map();
+    listWords.forEach((elem) {
+      if (wordCount.containsKey(elem)) {
+        wordCount[elem]=wordCount[elem]+1;
+      } else {
+        wordCount[elem] = 1;
+      }
+    });
+    return wordCount;
+  }
 
+  
 }
-
