@@ -10,7 +10,10 @@ void main() {
   // print(nc.nokInt(24, 35));
   // print(nc.getListNum('Проверка 555 строки или 6.25'));
   // print(nc.wordCount('Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный я'));
-  print(nc.wordToNum('one two bag zero one five zero'));
+  // print(nc.wordToNum('one two bag zero one five zero'));
+  var pointA = Point(1, 2, 1);
+  var pointB = Point(1, 1, 2);
+  print(pointA.distanceTo(pointB));
 }
 
 class NumberConvert {
@@ -157,5 +160,28 @@ class NumberConvert {
       }
     });
     return numList;
+  }
+}
+
+// Реализуйте класс Point, который описывает точку в трёхмерном пространстве.
+//У данного класса реализуйте метод distanceTo(Point another), который возвращает расстояние от данной точки до точки в параметре.
+//По желанию можете реализовать метод, принимающий три точки в трёхмерном пространстве и возвращающий площадь треугольника, который образуют данные точки.
+//Реализуйте factory-конструкторы для данного класса, возвращающие начало координат,
+//и ещё несколько на своё усмотрение (например, конструктор, возвращающий точку с координатами [1,1], которая определяет единичный вектор).
+
+class Point {
+  num x, y, z;
+  Point(this.x, this.y, this.z);
+
+  double distanceTo(Point b) {
+    double distance = sqrt((b.x - this.x) * (b.x - this.x) +
+        (b.y - this.y) * (b.y - this.y) +
+        (b.z - this.z) * (b.z - this.z));
+    return distance;
+  }
+
+  double squareTriangle(Point a, Point b, Point c) {
+    double square = 0;
+    return square;
   }
 }
