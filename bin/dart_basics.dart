@@ -9,8 +9,8 @@ void main() {
   // print(nc.nodInt(126, 12));
   // print(nc.nokInt(24, 35));
   // print(nc.getListNum('Проверка 555 строки или 6.25'));
-  print(nc.wordCount(
-      'Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный я'));
+  // print(nc.wordCount('Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный я'));
+  print(nc.wordToNum('one two bag zero one five zero'));
 }
 
 class NumberConvert {
@@ -134,9 +134,28 @@ class NumberConvert {
 //Например, в результате строки ‘one, two, zero, zero’ мы получим следующий результат: [1, 2, 0].
 //Если в строке есть слова, не являющиеся цифрами от 0 до 9, пропускайте их.
 
-  List wordToNum(String str) {
-    List numList = [];
-
+  Set wordToNum(String str) {
+    Set numList = {};
+    var index;
+    Map<int, String> numerator = {
+      0: 'zero',
+      1: 'one',
+      2: 'two',
+      3: 'three',
+      4: 'four',
+      5: 'five',
+      6: 'six',
+      7: 'seven',
+      8: 'eight',
+      9: 'nine'
+    };
+    var revers_numerator = numerator.map((k, v) => MapEntry(v, k));
+    List strList = str.split(' ');
+    strList.forEach((elem) {
+      if (numerator.containsValue(elem)) {
+        numList.add(revers_numerator[elem]);
+      }
+    });
     return numList;
   }
 }
