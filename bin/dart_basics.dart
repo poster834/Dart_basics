@@ -1,4 +1,4 @@
-import 'package:dart_basics/dart_basics.dart' as dart_basics;
+// import 'package:/dart_basics.dart' as dart_basics;
 import 'dart:math';
 
 void main() {
@@ -9,7 +9,8 @@ void main() {
   // print(nc.nodInt(126, 12));
   // print(nc.nokInt(24, 35));
   // print(nc.getListNum('Проверка 555 строки или 6.25'));
-  print(nc.wordCount('Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный жара'));
+  print(nc.wordCount(
+      'Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный я'));
 }
 
 class NumberConvert {
@@ -96,30 +97,30 @@ class NumberConvert {
     return binNum;
   }
 
-//Реализуйте метод, который принимает строку слов, разделённых пробелами. 
+//Реализуйте метод, который принимает строку слов, разделённых пробелами.
 //Задача — найти в данной строке числа и вернуть коллекцию num этих чисел.
 
-List getListNum(String str){
-List<num> listNumbers=[];
-List listWords = str.split(' ');
-listWords.forEach((elem) {
-  var numDec = double.tryParse(elem);
-  if (numDec != null) {
-    listNumbers.add(numDec);
+  List getListNum(String str) {
+    List<num> listNumbers = [];
+    List listWords = str.split(' ');
+    listWords.forEach((elem) {
+      var numDec = double.tryParse(elem);
+      if (numDec != null) {
+        listNumbers.add(numDec);
+      }
+    });
+    return listNumbers;
   }
-});
-return listNumbers;
-}
 
-//Есть коллекция слов. Реализуйте метод, возвращающий Map. 
+//Есть коллекция слов. Реализуйте метод, возвращающий Map.
 //Данный Map должен соотносить слово и количество его вхождений в данную коллекцию.
 
-  Map wordCount(String str){
-  List listWords = str.split(' ');
-  Map wordCount = Map();
+  Map wordCount(String str) {
+    List listWords = str.split(' ');
+    Map wordCount = Map();
     listWords.forEach((elem) {
       if (wordCount.containsKey(elem)) {
-        wordCount[elem]=wordCount[elem]+1;
+        wordCount[elem] = wordCount[elem] + 1;
       } else {
         wordCount[elem] = 1;
       }
@@ -127,5 +128,15 @@ return listNumbers;
     return wordCount;
   }
 
-  
+// Есть коллекция строк вида ‘one, two, three, cat, dog’ или любого другого.
+//Реализуйте метод, возвращающий цифры без повторений, которые встречаются в данной строке.
+//Однако цифры встречаются в виде английских слов от zero до nine.
+//Например, в результате строки ‘one, two, zero, zero’ мы получим следующий результат: [1, 2, 0].
+//Если в строке есть слова, не являющиеся цифрами от 0 до 9, пропускайте их.
+
+  List wordToNum(String str) {
+    List numList = [];
+
+    return numList;
+  }
 }
