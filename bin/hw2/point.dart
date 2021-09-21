@@ -11,12 +11,25 @@ class Point {
   num z;
 
   Point(double this.x, double this.y, double this.z);
+
   factory Point.zero() {
     return Point(0, 0, 0);
   }
 
   factory Point.vector() {
     return Point(1, 1, 1);
+  }
+
+  factory Point.vectorX() {
+    return Point(1, 0, 0);
+  }
+
+  factory Point.vectorY() {
+    return Point(0, 1, 0);
+  }
+
+  factory Point.vectorZ() {
+    return Point(0, 0, 1);
   }
 
   double distanceTo(Point b) {
