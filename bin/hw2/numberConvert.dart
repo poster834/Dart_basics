@@ -153,29 +153,24 @@ class NumberConvert {
 //Запрещается использовать методы math.
 //В случае когда значение вернуть невозможно, необходимо бросать исключение с описанием ошибки.
 extension rootInDeg on NumberConvert {
-  num getRoot(var x, var n) {
-    var root = 0.0;
-    double eps = 0.00001;
-    double x2 = x / 2;
-    double A2 = getPow(x2, n);
-    print(x);
-    print(A2);
+  num getRoot(var A, var n) {
+    // double newRoot;
+    double eps = 0.00000000001;
+    double root = A / n;
+    double root2n = getPow(root, n);
 
-    if (x < A2) {
-      print("x small");
-      // while ((A2 - x) > eps) {
-      //   A2 = getPow(x2 - eps, n);
-      // }
-      // root = A2;
+    if (A <= 0 || n <= 0) {
+      throw ArgumentError();
     }
-    if (x > A2) {
-      print("x biggest");
+    while (plusNum(root2n - A) > eps) {
+      root = (1 / n) * (((n - 1) * root) + (A / (getPow(root, n - 1))));
+      root2n = getPow(root, n);
     }
-    if (x == A2) {
-      root = x;
-    }
-    print("=========");
     return root;
+  }
+
+  double plusNum(double x) {
+    return (x < 0) ? -x : x;
   }
 
   double getPow(x, n) {
