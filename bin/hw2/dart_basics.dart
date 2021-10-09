@@ -23,7 +23,17 @@ void main() {
   // print(pointA.pointCoords(Point));
   // print(pointB.pointCoords(Point));
   // print(pointC.pointCoords(Point));
-  nc.getRoot(8, 3);
-  nc.getRoot(4, 2);
-  nc.getRoot(3, 8);
+  // print(nc.getRoot(8, 3));
+  // print(nc.getRoot(3, 8));
+
+  try {
+    print(nc.getRoot(8, 3));
+    print(nc.getRoot(-3, 8));
+  } on ArgumentError catch (e) {
+    print('деление на 0');
+  } catch (e) {
+    print('возникла ошибка');
+  }
+
+  // print(nc.getRoot(0, 0));
 }
