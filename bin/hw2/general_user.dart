@@ -1,3 +1,3 @@
-import 'User.dart';
+import 'user.dart';
 
 class GeneralUser extends User {}

@@ -1,3 +1,3 @@
-import 'User.dart';
+import 'user.dart';
 
 class AdminUser extends User with GetInfo {}

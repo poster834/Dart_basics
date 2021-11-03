@@ -1,4 +1,4 @@
-import 'numberConvert.dart';
+import 'number_convert.dart';
 import 'point.dart';
 
 void main() {
@@ -11,7 +11,7 @@ void main() {
   // print(nc.getListNum('Проверка 555 строки или 6.25'));
   // print(nc.wordCount('Однажды в студеную летнюю пору я из лесу вышел был сильный жара и сильный я'));
   // print(nc.wordToNum('one two bag zero one five zero'));
-  // var pointA = Point(1, 11, 5);
+  var pointA = Point(1, 11, 5);
   // var pointB = Point.zero();
   // var pointC = Point.vector();
   // var pointA = Point(2, 0, 0);
@@ -20,9 +20,9 @@ void main() {
   // var pointX = Point(2, 2, 2);
   // print(pointA.distanceTo(pointB));
   // print(pointA.squareTriangle(pointA, pointB, pointC));
-  // print(pointA.pointCoords(Point));
-  // print(pointB.pointCoords(Point));
-  // print(pointC.pointCoords(Point));
+  print(pointA.pointCoords());
+  // print(pointB.pointCoords());
+  // print(pointC.pointCoords());
   // print(nc.getRoot(8, 3));
   // print(nc.getRoot(3, 8));
 

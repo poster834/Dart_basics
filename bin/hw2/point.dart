@@ -53,11 +53,8 @@ class Point {
     return square;
   }
 
-  List pointCoords(Point) {
-    List coords = [];
-    coords.add(x);
-    coords.add(y);
-    coords.add(z);
+  List pointCoords() {
+    List<dynamic> coords = []..add(x)..add(y)..add(z);
     return coords;
   }
 }

@@ -1,4 +1,4 @@
-import 'User.dart';
+import 'user.dart';
 
 class UserManager<T extends User> {
   List<User> userList = [];
@@ -12,7 +12,7 @@ class UserManager<T extends User> {
   }
 
   void mailList() {
-    if (userList.length > 0) {
+    if (userList.isNotEmpty) {
       userList.forEach((element) {
         if (element.name == 'admin') {
           print(element.getMailSystem(element));
